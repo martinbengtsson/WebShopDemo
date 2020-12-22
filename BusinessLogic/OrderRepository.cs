@@ -18,13 +18,17 @@ namespace BusinessLogic
         {
             this.context = context;
 
-            
         }
-   
 
         public IEnumerable<Orders> GetOrdersByUser()
         {
             throw new NotImplementedException();
         }
+
+
+        //public IEnumerable<Orders> GetOrdersByUser()
+        //{
+
+        //}
     }
 }

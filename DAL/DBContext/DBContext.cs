@@ -10,6 +10,8 @@ namespace DAL.DBContext
 {
     public class DBContext : DbContext
     {
+
+        
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
            
@@ -17,6 +19,8 @@ namespace DAL.DBContext
 
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+
+
 
     }
 }
