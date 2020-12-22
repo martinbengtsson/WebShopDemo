@@ -1,4 +1,5 @@
 ﻿using DAL.DBContext;
+using Microsoft.EntityFrameworkCore;
 using ModelsLayer;
 using RepositoryModel;
 using System;
@@ -16,7 +17,10 @@ namespace BusinessLogic
         public OrderRepository(DBContext context) : base(context)
         {
             this.context = context;
+
+            
         }
+   
 
         public IEnumerable<Orders> GetOrdersByUser()
         {
