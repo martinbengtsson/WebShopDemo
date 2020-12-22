@@ -9,8 +9,8 @@ namespace ModelsLayer
     public class Orders
     {
         public int Id { get; set; }
-      //  public int MyProperty { get; set; }
-       // public  IEnumerable<Product> Product { get; set; }
+        public int ProductId { get; set; }
+        public  IEnumerable<Product> Product { get; set; }
         public DateTime Datetime { get; set; }
 
     }

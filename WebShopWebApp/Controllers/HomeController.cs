@@ -24,7 +24,7 @@ namespace WebShopWebApp.Controllers
         public IActionResult Index()
         {
 
-            return View(UoW.prodRepository.GetAllRecords().ToList());
+            return View(UoW.productRepository.GetAllRecords().ToList());
           // var view = UoW.ProductRepository.GetAllRecords();
             
         }

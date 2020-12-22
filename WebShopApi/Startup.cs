@@ -38,6 +38,7 @@ namespace WebShopApi
             services.AddDbContext<DBContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("ConnectionStr")));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }

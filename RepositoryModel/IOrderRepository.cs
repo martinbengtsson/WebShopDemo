@@ -9,6 +9,6 @@ namespace RepositoryModel
 {
     public interface IOrderRepository
     {
-        IEnumerable<Orders> GetOrdersByUser(int userId);
+        IEnumerable<Orders> GetOrdersByUser();
     }
 }
