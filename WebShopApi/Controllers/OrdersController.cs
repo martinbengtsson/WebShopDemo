@@ -8,7 +8,6 @@ using System.Collections.Generic;
 
 namespace WebShopApi.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     
@@ -24,7 +23,7 @@ namespace WebShopApi.Controllers
         [HttpGet]
         public IEnumerable<Orders> Get()
         {
-            return UoW.OrderReposity.GetAllRecords();
+            return UoW.OrderRepository.GetAllRecords();
         }
 
         // GET api/<OrdersController>/5

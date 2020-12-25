@@ -11,7 +11,6 @@ namespace BusinessLogic
 {
     public class GenericRepository<T> : IGenericRepository<T>, IDisposable where T : class
     {
-
         private readonly DBContext _context;
         private readonly DbSet<T> _DbSet;
 
@@ -21,7 +20,7 @@ namespace BusinessLogic
             this._DbSet = this._context.Set<T>();
         }
 
-        public IEnumerable<T> GetAllRecords()
+        public virtual IEnumerable<T> GetAllRecords()
         {
             return _DbSet.ToList();
         }
@@ -61,9 +60,5 @@ namespace BusinessLogic
         {
             throw new NotImplementedException();
         }
-
-
-
-
     }
 }

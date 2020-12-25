@@ -17,10 +17,9 @@ namespace BusinessLogic
         public OrderRepository(DBContext context) : base(context)
         {
             this.context = context;
-
         }
 
-        public IEnumerable<Orders> GetOrdersByUser()
+        public IEnumerable<Orders> GetOrdersAndProducts()
         {
             throw new NotImplementedException();
         }

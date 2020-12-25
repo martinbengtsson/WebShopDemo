@@ -12,10 +12,9 @@ namespace ModelsLayer
     {
         [Key]
         public int OrderId { get; set; }
-       
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
-        public  IEnumerable<Product> Product { get; set; }
+        public virtual IEnumerable<Product> Product { get; set; }
         public DateTime Datetime { get; set; }
 
     }
