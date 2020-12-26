@@ -21,10 +21,10 @@ namespace WebShopApi.Controllers
 
         // GET: api/<OrdersController>
         [HttpGet]
-        public IEnumerable<Orders> Get()
+        public IEnumerable<OrderProduct> Get()
         {
-            //UoW.productRepository.GetAllRecords();
-            return UoW.OrderRepository.GetOrdersAndProducts();    
+            // return UoW.OrderRepository.GetOrdersAndProducts();    
+            return UoW.OrderProduct.GetOrdersAndProducts();
         }
 
         // GET api/<OrdersController>/5
@@ -49,8 +49,10 @@ namespace WebShopApi.Controllers
 
         // PUT api/<OrdersController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Orders order)
         {
+            UoW.OrderRepository.UpdateRecord(order);
+            UoW.SaveChanges();
         }
 
         // DELETE api/<OrdersController>/5

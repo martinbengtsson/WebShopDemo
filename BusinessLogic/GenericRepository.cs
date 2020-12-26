@@ -23,8 +23,6 @@ namespace BusinessLogic
        
         virtual public IEnumerable<T> GetAllRecords()
         {
-            //return _context.Set<T>();
-
             return _DbSet.ToList<T>();
         }
 

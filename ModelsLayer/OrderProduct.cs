@@ -8,14 +8,17 @@ using System.Threading.Tasks;
 
 namespace ModelsLayer
 {
-    public class Orders
+    public class OrderProduct
     {
         [Key]
+        public int OrderProductId { get; set; }
+        [ForeignKey("ProductId")]
+        public int ProductId { get; set; }
+        [ForeignKey("OrderId")]
         public int OrderId { get; set; }
-        public DateTime Datetime { get; set; }
 
-       // public List<OrderProduct> orderProducts { get; set; }
-
+        public Orders order { get; set; }
+        public Product product { get; set; }
 
     }
 }

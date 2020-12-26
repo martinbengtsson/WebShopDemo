@@ -17,12 +17,11 @@ namespace DAL.DBContext
 
         public virtual DbSet<Product> Product { get; private set; }
         public virtual DbSet<Orders> Orders { get; private set; }
+        public virtual DbSet<OrderProduct> OrderProduct { get; private set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
- 
-                
-
+           
             }
 
             //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

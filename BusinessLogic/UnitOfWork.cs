@@ -16,6 +16,7 @@ namespace BusinessLogic
         //public OrderRepository OrderReposity  { get; private set; }
         public IGenericRepository<Product> productRepository { get; set; }
         public IOrderRepository OrderRepository { get; set; }
+        public OrderProductRepository OrderProduct { get; set; }
 
         public UnitOfWork(DBContext context)
         {
@@ -23,7 +24,7 @@ namespace BusinessLogic
 
             this.productRepository = new GenericRepository<Product>(this._context);
             this.OrderRepository = new OrderRepository(this._context);
-            
+            this.OrderProduct = new OrderProductRepository(this._context);
         }
         public void SaveChanges()
         {
