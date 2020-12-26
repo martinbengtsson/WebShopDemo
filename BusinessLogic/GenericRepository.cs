@@ -20,9 +20,12 @@ namespace BusinessLogic
             this._DbSet = this._context.Set<T>();
         }
 
-        public virtual IEnumerable<T> GetAllRecords()
+       
+        virtual public IEnumerable<T> GetAllRecords()
         {
-            return _DbSet.ToList();
+            //return _context.Set<T>();
+
+            return _DbSet.ToList<T>();
         }
 
         public IEnumerable<T> FindRecord(Expression<Func<T, bool>> predicate)

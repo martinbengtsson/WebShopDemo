@@ -20,8 +20,10 @@ namespace BusinessLogic
         public UnitOfWork(DBContext context)
         {
             this._context = context;
+
             this.productRepository = new GenericRepository<Product>(this._context);
             this.OrderRepository = new GenericRepository<Orders>(this._context);
+            
         }
         public void SaveChanges()
         {

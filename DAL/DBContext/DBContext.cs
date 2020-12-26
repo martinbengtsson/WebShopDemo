@@ -10,17 +10,18 @@ namespace DAL.DBContext
 {
     public class DBContext : DbContext
     {
-
-        
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
            
         }
 
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Product> Product { get; private set; }
+        public virtual DbSet<Orders> Orders { get; private set; }
 
-
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    Console.WriteLine("test");
+        //}
 
     }
 }

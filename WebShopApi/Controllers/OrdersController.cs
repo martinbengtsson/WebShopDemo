@@ -23,6 +23,7 @@ namespace WebShopApi.Controllers
         [HttpGet]
         public IEnumerable<Orders> Get()
         {
+            UoW.productRepository.GetAllRecords();
             return UoW.OrderRepository.GetAllRecords();
         }
 

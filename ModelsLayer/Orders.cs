@@ -14,7 +14,7 @@ namespace ModelsLayer
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
-        public virtual IEnumerable<Product> Product { get; set; }
+        virtual public Product product { get; set; }
         public DateTime Datetime { get; set; }
 
     }
