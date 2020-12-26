@@ -23,8 +23,8 @@ namespace WebShopApi.Controllers
         [HttpGet]
         public IEnumerable<Orders> Get()
         {
-            UoW.productRepository.GetAllRecords();
-            return UoW.OrderRepository.GetAllRecords();
+            //UoW.productRepository.GetAllRecords();
+            return UoW.OrderRepository.GetOrdersAndProducts();    
         }
 
         // GET api/<OrdersController>/5
@@ -35,9 +35,16 @@ namespace WebShopApi.Controllers
         }
 
         // POST api/<OrdersController>
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //   // UoW.OrderRepository.AddRecord();
+        //}
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void PostItem([FromBody] Orders order)
         {
+            UoW.OrderRepository.AddRecord(order);
+            UoW.SaveChanges();
         }
 
         // PUT api/<OrdersController>/5

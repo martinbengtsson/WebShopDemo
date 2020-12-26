@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryModel
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IGenericRepository<Orders>
     {
         IEnumerable<Orders> GetOrdersAndProducts();
     }

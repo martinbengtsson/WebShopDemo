@@ -15,14 +15,14 @@ namespace BusinessLogic
         //  public ProductRepository productRepository { get; private set; }
         //public OrderRepository OrderReposity  { get; private set; }
         public IGenericRepository<Product> productRepository { get; set; }
-        public IGenericRepository<Orders> OrderRepository { get; set; }
+        public IOrderRepository OrderRepository { get; set; }
 
         public UnitOfWork(DBContext context)
         {
             this._context = context;
 
             this.productRepository = new GenericRepository<Product>(this._context);
-            this.OrderRepository = new GenericRepository<Orders>(this._context);
+            this.OrderRepository = new OrderRepository(this._context);
             
         }
         public void SaveChanges()

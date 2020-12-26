@@ -12,16 +12,23 @@ namespace DAL.DBContext
     {
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
-           
+            Database.EnsureCreated();
         }
 
         public virtual DbSet<Product> Product { get; private set; }
         public virtual DbSet<Orders> Orders { get; private set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    Console.WriteLine("test");
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+ 
+                
 
-    }
+            }
+
+            //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            //{
+            //    Console.WriteLine("test");
+            //}
+
+        }
 }

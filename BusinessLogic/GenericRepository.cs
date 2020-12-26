@@ -54,11 +54,6 @@ namespace BusinessLogic
             _context.Entry(obj).State = EntityState.Modified;
         }
 
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
         void IDisposable.Dispose()
         {
             throw new NotImplementedException();

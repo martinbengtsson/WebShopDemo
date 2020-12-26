@@ -17,7 +17,6 @@ namespace RepositoryModel
 
         void UpdateRecord(T obj);
 
-        void Save();
 
 
 

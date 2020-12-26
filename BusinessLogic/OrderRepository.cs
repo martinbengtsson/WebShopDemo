@@ -21,9 +21,11 @@ namespace BusinessLogic
 
         public IEnumerable<Orders> GetOrdersAndProducts()
         {
-         
 
-            throw new NotImplementedException();
+           var ctex = context.Orders.Include(c => c.product);
+
+
+            return ctex.ToList();
         }
 
 

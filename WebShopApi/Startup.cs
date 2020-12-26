@@ -36,7 +36,7 @@ namespace WebShopApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebShopApi", Version = "v1" });
             });
             services.AddDbContext<DBContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("ConnectionStr")));
+           options.UseSqlServer(Configuration.GetConnectionString("ConnectionStr")).EnableSensitiveDataLogging());
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
